@@ -6,40 +6,96 @@
 
 // using addEventListener
 
-// window.addEventListener("keydown", (e) => {
 
-//     const audio = document.querySelectorAll(`audio[data-key="${e.keycode}"]`)
-//     console.log(audio)
-//     if (audio);
+// letter variables
+// shows how to access a html element
 
-// });
+const a = document.getElementById("a")
+const s = document.getElementById("s")
+const d = document.getElementById("d")
+const f = document.getElementById("f")
+const g = document.getElementById("g")
+const h = document.getElementById("h")
+const j = document.getElementById("j")
+const k = document.getElementById("k")
+const l = document.getElementById("l")
 
-// audio.play(); {
+// this is how to input external files 
 
-// }
-// return
+//  sound variables
+const boom = new Audio('sounds/boom.wav')
+const clap = new Audio('sounds/clap.wav')
+const hihat = new Audio('sounds/hihat.wav')
+const kick = new Audio('sounds/kick.wav')
+const openhat = new Audio('sounds/openhat.wav')
+const ride = new Audio('sounds/ride.wav')
+const snare = new Audio('sounds/snare.wav')
+const tink = new Audio('sounds/tink.wav')
+const tom = new Audio('sounds/tom.wav')
 
+// key presses
+// how to handle events(keyboard events)
 
-const audio = document.querySelectorAll('audio');
-const keys = document.querySelectorAll('key div');
+window.addEventListener("keydown", (event) => {
+    if (event.key === "a") {
+        boom.play();
+        console.log(event.key)
+    } else if (event.key === "s") {
+        clap.play();
+        console.log(event.key)
+    } else if (event.key === "d") {
+        hihat.play();
+        console.log(event.key)
+    } else if (event.key === "f") {
+        kick.play();
+        console.log(event.key)
+    } else if (event.key === "g") {
+        openhat.play();
+        console.log(event.key)
+    } else if (event.key === "h") {
+        ride.play();
+        console.log(event.key)
+    } else if (event.key === "j") {
+        snare.play();
+        console.log(event.key)
+    } else if (event.key === "k") {
+        tink.play();
+        console.log(event.key)
+    } else if (event.key === "l") {
+        tom.play();
+        console.log(event.key)
+    }
+})
 
-window.addEventListener('keydown', (e) => {
-    // The KeyCode.
-    let audio = e.keyCode.toString();
+// clicks!
+// how to access mouse clicks 
 
-    // Playing the audio if the keyCode is equal to the audio's ID.
-    songs.forEach(song => {
-        if (audio === song.id) {
-            audio.play();
-            audio.currentTime = 0;
-        };
-    });
+a.addEventListener("click", () => {
+    boom.play();
+})
+s.addEventListener("click", () => {
+    clap.play();
+})
+d.addEventListener("click", () => {
+    hihat.play();
+})
+f.addEventListener("click", () => {
+    kick.play();
+})
+g.addEventListener("click", () => {
+    openhat.play();
+})
+h.addEventListener("click", () => {
+    ride.play();
+})
+j.addEventListener("click", () => {
+    snare.play();
+})
+k.addEventListener("click", () => {
+    tink.play();
+})
+l.addEventListener("click", () => {
+    tom.play();
+})
 
-    // Adding the animation to the divs if the keyCode is equal to the div's ID.
-    keys.forEach(div => {
-        if (audio === div.id) {
-            div.key.add('animate');
-            setTimeout(() => div.key.remove('animate'), 100);
-        }
-    })
-});
+//
